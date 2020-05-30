@@ -96,6 +96,7 @@ def get_pending_requests():
 def doctor_report(request_id, message):
     row = db.session.query(PatientRequest).filter_by(id=request_id).first()
     row.doctor_comment = message
+    row.has_recommendation = True
     db.session.commit()
 
     #send message to patient
@@ -155,8 +156,6 @@ def prescreening_request():
 
         patient_request = PatientRequest(
             patient_email=data['patient_email'],
-            patient_comment=data['patient_comment'],
-            doctor_comment=data['doctor_comment'],
             temperature=data['temperature'],
             has_cough=data['hasCough'],
             has_fever=data['hasFever'],
@@ -166,6 +165,10 @@ def prescreening_request():
             has_loss_of_ts=data['hasLossOfTasteOrSmell'],
             has_contact_with_coronac=data['hasContactWithCoronaCase'],
         )
+
+        if 'patientComment' in data:
+            patient_request.patient_comment = data['patientComment']
+           
 
         conn = connect_to_db()
         create_requests_table(conn)
