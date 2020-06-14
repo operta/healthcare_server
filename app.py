@@ -169,11 +169,9 @@ def prescreening_request():
         if 'patientComment' in data:
             patient_request.patient_comment = data['patientComment']
 
-            
         if 'patient_comment' in data:
             patient_request.patient_comment = data['patient_comment']
            
-
         conn = connect_to_db()
         create_requests_table(conn)
         db.create_all()
