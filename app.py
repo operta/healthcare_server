@@ -6,6 +6,7 @@ import sqlite3
 from sqlite3 import Error
 import simplejson as json
 import random
+import datetime
 
 
 app = Flask(__name__)
@@ -36,6 +37,9 @@ class PatientRequest(db.Model):
     has_loss_of_ts = db.Column(db.Boolean, nullable=False)
     has_contact_with_coronac = db.Column(db.Boolean, nullable=False)
     has_recommendation = db.Column(db.Boolean)
+    feedback = db.Column(db.String)
+    time_started = db.Column(db.DateTime, default=datetime.datetime.utcnow)
+    time_ended = db.Column(db.DateTime)
 
     @property
     def serialize(self):
@@ -90,6 +94,17 @@ def get_pending_requests():
 
     return make_response(jsonify(list), 200)
 
+
+@app.route('/submit-feedback/<int:student_id>/<string:value>', methods=['PUT'])
+@cross_origin()
+def submit_feedback(student_id, value):
+    row = db.session.query(PatientRequest).filter_by(student_id=student_id).first()
+    row.feedback = value
+    row.time_ended = datetime.datetime.utcnow
+    send_email("Your feedback has been recorded. Thank you for using our system", recipient=row.patient_email)
+    db.session.commit()
+
+
 #TODO Zana Begoli part
 @app.route('/doctor-report/<int:request_id>/<string:message>', methods=['PUT'])
 @cross_origin()
@@ -102,6 +117,9 @@ def doctor_report(request_id, message):
     #send message to patient
     send_email(message, recipient=row.patient_email)
     return make_response(jsonify({'success': request_id}), 200)
+
+
+
 
 
 @app.route('/close-request/<int:request_id>', methods=['PUT'])
@@ -245,7 +263,11 @@ def create_requests_table(conn):
                 has_sore_throat BOOLEAN NOT NULL CHECK (has_sore_throat IN (0,1)),
                 has_loss_of_ts BOOLEAN NOT NULL CHECK (has_loss_of_ts IN (0,1)),
                 has_contact_with_coronac BOOLEAN NOT NULL CHECK (has_contact_with_coronac IN (0,1))
-                has_recommendation BOOLEAN CHECK (has_contact_with_coronac IN (0,1))
+                has_recommendation BOOLEAN CHECK (has_contact_with_coronac IN (0,1)),
+                feedback varchar,
+                time_started TIMESTAMP,
+                time_ended TIMESTAMP,
+                student_id varchar
             );"""
     try:
         cur = conn.cursor()
@@ -254,7 +276,6 @@ def create_requests_table(conn):
         app.logger.error(e)
 
 
-### MODEL
 
 
 
