@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <script>
+
+  	function sendParams() {
+  		var value = document.getElementById("ratings").value;
+  		var student_id = gup('student_id', window.location.href)
+  		var xhttp = new XMLHttpRequest()
+
+  		xhttp.open('PUT', 'http://3.126.117.204:5000/submit-feedback/' + student_id + '/' + value)
+  	  xhttp.setRequestHeader('Access-Control-Allow-Origin', '*')
+  		xhttp.send()
+  		window.location.replace("review-submitted.html")
+  	}
+
+
+    		function gup( name, url ) {
+    	    if (!url) url = location.href;
+    	    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    	    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    	    var regex = new RegExp( regexS );
+    	    var results = regex.exec( url );
+    	    return results == null ? null : results[1];
+    	}
+    </script>
+  </head>
+  <body>
+  <div>
+    <form class="customer_rating" method="PUT">
+      <select class="ratings" id="ratings" required>
+        <option selected>Please rate our service</option>
+        <option value="5">Excellent</option>
+        <option value="4">Good</option>
+        <option value="3">Fair</option>
+        <option value="2">Poor</option>
+        <option value="1">Very Poor</option>
+      </select>
+      <div class="">
+        	<input type="button" value="Submit" type="submit" onclick="sendParams()">
+						<!-- <button onclick="sendParams()">
+							Submit feedback
+						</button> -->
+					</div>
+    </form>
+</body>
+
+</html>

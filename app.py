@@ -7,7 +7,7 @@ from sqlite3 import Error
 import simplejson as json
 import random
 import datetime
-
+import sys
 
 app = Flask(__name__)
 CORS(app)
@@ -23,8 +23,8 @@ class PatientRequest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     patient_email = db.Column(db.String, nullable=False)
     patient_id = db.Column(db.String)
-    doctor_comment = db.Column(db.String)
-    patient_comment = db.Column(db.String)
+    doctor_comment = db.Column(db.Text)
+    patient_comment = db.Column(db.Text)
     is_closed = db.Column(db.Boolean, default=False)
     is_positive = db.Column(db.Boolean, default=False)
     is_suspect = db.Column(db.Boolean, default=False)
@@ -40,6 +40,7 @@ class PatientRequest(db.Model):
     feedback = db.Column(db.String)
     time_started = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     time_ended = db.Column(db.DateTime)
+    student_id = db.Column(db.String, nullable=False)
 
     @property
     def serialize(self):
@@ -117,17 +118,19 @@ def send_contacts(email, lastname, firstname, studentid):
 @app.route('/doctor-report/<int:request_id>/<string:message>', methods=['PUT'])
 @cross_origin()
 def doctor_report(request_id, message):
+    print('in doctor report')
     row = db.session.query(PatientRequest).filter_by(id=request_id).first()
     row.doctor_comment = message
     row.has_recommendation = True
     db.session.commit()
 
+    # get written doctor_report
+    file1 = open("doctor_message.txt", "r+")
+    message = file1.read()
+    file1.close()
     #send message to patient
     send_email(message, recipient=row.patient_email)
     return make_response(jsonify({'success': request_id}), 200)
-
-
-
 
 
 @app.route('/close-request/<int:request_id>', methods=['PUT'])
@@ -140,49 +143,67 @@ def close_request(request_id):
     return make_response(jsonify({'success': request_id}), 200)
 
 
-
-# TODO Sarah liedermans part
 @app.route('/simulate-test/<int:request_id>', methods=['PUT'])
 @cross_origin()
 def simulate_test(request_id):
+    print('in simulate test')
     simulated_val = bool(random.getrandbits(1))
     row = db.session.query(PatientRequest).filter_by(id=request_id).first()
     row.is_positive = simulated_val
     row.is_suspect = False
     row.is_closed = True
+    id = row.id
     db.session.commit()
     if not simulated_val:
         send_email("Lab test results are negative. You don't have corona virus!", row.patient_email)
+    # simulate doctor report
+    else:
+        doctor_report(id, message="test")
     return make_response(jsonify({'success': 'Test done'}), 200)
 
+
+
+bool_cols = ['hasCough', 'hasFever', 'hasShortnessOfBreath', 'hasMusclePain', 'hasSoreThroat', 'hasContactWithCoronaCase', 'hasLossOfTasteOrSmell']
 
 @app.route('/', methods=['POST'])
 def prescreening_request():
     if request.is_json:
         data = request.get_json()
+        data = json.loads(data)
+        print(data)
 
-        if 'patient_email' not in data:
-            return make_response(jsonify({'error': 'Field patient_email does not exist'}), 400)
-        if 'temperature' not in data:
-            return make_response(jsonify({'error': 'Field temperature does not exist'}), 400)
+        if ('patient_email' not in data) or data['patient_email'] == '':
+            return make_response(jsonify({'error': 'Field patient_email does not exist. Please fill out all required fields.'}), 400)
+        if ('student_id' not in data) or data['student_id'] == '':
+            return make_response(jsonify({'error': 'Field student_id does not exist. Please fill out all required fields.'}), 400)
+        if ('temperature' not in data) or data['temperature'] == '':
+            return make_response(jsonify({'error': 'Field temperature does not exist. Please fill out all required fields.'}), 400)
         if 'hasCough' not in data:
-            return make_response(jsonify({'error': 'Field hasCough does not exist'}), 400)
+            return make_response(jsonify({'error': 'Field hasCough does not exist. Please fill out all required fields.'}), 400)
         if 'hasFever' not in data:
-            return make_response(jsonify({'error': 'Field hasFever does not exist'}), 400)
+            return make_response(jsonify({'error': 'Field hasFever does not exist. Please fill out all required fields.'}), 400)
         if 'hasShortnessOfBreath' not in data:
-            return make_response(jsonify({'error': 'Field hasShortnessOfBreath does not exist'}), 400)
+            return make_response(jsonify({'error': 'Field hasShortnessOfBreath does not exist. Please fill out all required fields.'}), 400)
         if 'hasMusclePain' not in data:
-            return make_response(jsonify({'error': 'Field hasMusclePain does not exist'}), 400)
+            return make_response(jsonify({'error': 'Field hasMusclePain does not exist. Please fill out all required fields.'}), 400)
         if 'hasSoreThroat' not in data:
-            return make_response(jsonify({'error': 'Field hasSoreThroat does not exist'}), 400)
+            return make_response(jsonify({'error': 'Field hasSoreThroat does not exist. Please fill out all required fields.'}), 400)
         if 'hasContactWithCoronaCase' not in data:
-            return make_response(jsonify({'error': 'Field hasContactWithCoronaCase does not exist'}), 400)
+            return make_response(jsonify({'error': 'Field hasContactWithCoronaCase does not exist. Please fill out all required fields.'}), 400)
         if 'hasLossOfTasteOrSmell' not in data:
-            return make_response(jsonify({'error': 'Field hasLossOfTasteOrSmell does not exist'}), 400)
+            return make_response(jsonify({'error': 'Field hasLossOfTasteOrSmell does not exist. Please fill out all required fields.'}), 400)
+
+
+        for col in bool_cols:
+            if data[col] == "true":
+                data[col]=True
+            if data[col] == "false":
+                data[col]=False
+
 
         patient_request = PatientRequest(
             patient_email=data['patient_email'],
-            temperature=data['temperature'],
+            temperature=int(data['temperature']),
             has_cough=data['hasCough'],
             has_fever=data['hasFever'],
             has_shortness_of_breath=data['hasShortnessOfBreath'],
@@ -190,7 +211,9 @@ def prescreening_request():
             has_muscle_pain=data['hasMusclePain'],
             has_loss_of_ts=data['hasLossOfTasteOrSmell'],
             has_contact_with_coronac=data['hasContactWithCoronaCase'],
+            student_id=data['student_id']
         )
+
 
         if 'patientComment' in data:
             patient_request.patient_comment = data['patientComment']
@@ -207,14 +230,20 @@ def prescreening_request():
                   ' Request has been sent to medical team. You will be contacted shortly.'
             # send_email(msg, patient_request.patient_email)
             patient_request.is_suspect = True
+
             db.session.add(patient_request)
-            db.session.commit()
+            db.session.flush()
+            db.session.refresh(patient_request)
+            id = patient_request.id
+            # simulating decision and sending medical team
+            simulate_test(id)
             return make_response(jsonify({'message': msg}), 200)
 
         msg = "Pre-screening results are negative. You are not a corona suspect!"
-        # send_email(msg, patient_request.patient_email)
+        send_email(msg, patient_request.patient_email)
         patient_request.is_closed = True
         db.session.add(patient_request)
+
         db.session.commit()
         return make_response(
             jsonify({'message': 'Pre-screening results are negative. You are not a corona suspect!'}), 200)
@@ -246,11 +275,12 @@ def connect_to_db():
     conn = None
     try:
         conn = sqlite3.connect('healthcare.db')
+        conn.text_factory = str
     except Error as e:
         app.logger.error(e)
-    finally:
-        if conn:
-            conn.close()
+    # finally:
+    #     if conn:
+    #         conn.close()
     return conn
 
 
@@ -289,4 +319,4 @@ def create_requests_table(conn):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=True, port=4000)
