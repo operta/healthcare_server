@@ -1,0 +1,360 @@
+/home/ubuntu/healthcare_server/flask/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:4000/ (Press CTRL+C to quit)
+ * Restarting with stat
+/home/ubuntu/healthcare_server/flask/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+ * Debugger is active!
+ * Debugger PIN: 138-177-619
+/home/ubuntu/healthcare_server/flask/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:4000/ (Press CTRL+C to quit)
+ * Restarting with stat
+/home/ubuntu/healthcare_server/flask/local/lib/python2.7/site-packages/flask_sqlalchemy/__init__.py:834: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  'SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and '
+ * Debugger is active!
+ * Debugger PIN: 138-177-619
+[2020-06-16 14:18:28,456] ERROR in app: near "has_recommendation": syntax error
+/home/ubuntu/healthcare_server/flask/local/lib/python2.7/site-packages/sqlalchemy/sql/sqltypes.py:667: SAWarning: Dialect sqlite+pysqlite does *not* support Decimal objects natively, and SQLAlchemy must convert from floating point - rounding errors and other issues may occur. Please consider storing Decimal numbers as strings or integers on this platform for lossless storage.
+  "storage." % (dialect.name, dialect.driver)
+3.126.117.204 - - [16/Jun/2020 14:18:31] "[37mPOST / HTTP/1.1[0m" 200 -
+[2020-06-16 14:24:32,727] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 14:24:35] "[37mPOST / HTTP/1.1[0m" 200 -
+[2020-06-16 14:31:58,052] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 14:31:58] "[37mPOST / HTTP/1.1[0m" 200 -
+77.77.179.19 - - [16/Jun/2020 14:33:00] "[37mOPTIONS /send-contacts/e11935976@student.tuwien.ac.at/Operta/Dzan/11935977 HTTP/1.1[0m" 200 -
+77.77.179.19 - - [16/Jun/2020 14:33:01] "[37mPOST /send-contacts/e11935976@student.tuwien.ac.at/Operta/Dzan/11935977 HTTP/1.1[0m" 200 -
+77.77.179.19 - - [16/Jun/2020 14:33:15] "[37mOPTIONS /submit-feedback/11935977/5 HTTP/1.1[0m" 200 -
+77.77.179.19 - - [16/Jun/2020 14:33:15] "[37mPOST /submit-feedback/11935977/5 HTTP/1.1[0m" 200 -
+[2020-06-16 14:33:16,693] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 14:33:17] "[37mPOST / HTTP/1.1[0m" 200 -
+[2020-06-16 14:34:25,092] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 14:34:25] "[37mPOST / HTTP/1.1[0m" 200 -
+178.165.131.17 - - [16/Jun/2020 14:34:58] "[37mOPTIONS /submit-feedback/11935994/4 HTTP/1.1[0m" 200 -
+178.165.131.17 - - [16/Jun/2020 14:34:59] "[37mPOST /submit-feedback/11935994/4 HTTP/1.1[0m" 200 -
+[2020-06-16 14:51:02,251] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 14:51:03] "[37mPOST / HTTP/1.1[0m" 200 -
+194.166.97.210 - - [16/Jun/2020 14:52:31] "[37mOPTIONS /submit-feedback/00950830/5 HTTP/1.1[0m" 200 -
+194.166.97.210 - - [16/Jun/2020 14:52:31] "[35m[1mPOST /submit-feedback/00950830/5 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+194.166.97.210 - - [16/Jun/2020 14:52:37] "[37mOPTIONS /submit-feedback/00950830/5 HTTP/1.1[0m" 200 -
+194.166.97.210 - - [16/Jun/2020 14:52:37] "[35m[1mPOST /submit-feedback/00950830/5 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+194.166.97.210 - - [16/Jun/2020 14:52:42] "[37mOPTIONS /submit-feedback/00950830/4 HTTP/1.1[0m" 200 -
+194.166.97.210 - - [16/Jun/2020 14:52:42] "[35m[1mPOST /submit-feedback/00950830/4 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+194.166.97.210 - - [16/Jun/2020 14:52:55] "[37mOPTIONS /submit-feedback/00950830/4 HTTP/1.1[0m" 200 -
+194.166.97.210 - - [16/Jun/2020 14:52:55] "[35m[1mPOST /submit-feedback/00950830/4 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+194.166.97.210 - - [16/Jun/2020 14:53:03] "[37mOPTIONS /submit-feedback/00950830/5 HTTP/1.1[0m" 200 -
+194.166.97.210 - - [16/Jun/2020 14:53:03] "[35m[1mPOST /submit-feedback/00950830/5 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+3.126.117.204 - - [16/Jun/2020 17:46:44] "[31m[1mPOST / HTTP/1.1[0m" 400 -
+[2020-06-16 17:47:39,909] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 17:47:41] "[37mPOST / HTTP/1.1[0m" 200 -
+86.56.147.134 - - [16/Jun/2020 17:50:44] "[37mOPTIONS /submit-feedback/01625727/4 HTTP/1.1[0m" 200 -
+86.56.147.134 - - [16/Jun/2020 17:50:44] "[35m[1mPOST /submit-feedback/01625727/4 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+86.56.147.134 - - [16/Jun/2020 17:50:58] "[37mOPTIONS /submit-feedback/01625727/3 HTTP/1.1[0m" 200 -
+86.56.147.134 - - [16/Jun/2020 17:50:58] "[35m[1mPOST /submit-feedback/01625727/3 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+86.56.147.134 - - [16/Jun/2020 17:51:04] "[37mOPTIONS /submit-feedback/01625727/5 HTTP/1.1[0m" 200 -
+86.56.147.134 - - [16/Jun/2020 17:51:04] "[35m[1mPOST /submit-feedback/01625727/5 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+86.56.147.134 - - [16/Jun/2020 17:51:09] "[37mOPTIONS /submit-feedback/01625727/1 HTTP/1.1[0m" 200 -
+86.56.147.134 - - [16/Jun/2020 17:51:09] "[35m[1mPOST /submit-feedback/01625727/1 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+86.56.147.134 - - [16/Jun/2020 17:51:16] "[37mOPTIONS /submit-feedback/01625727/2 HTTP/1.1[0m" 200 -
+86.56.147.134 - - [16/Jun/2020 17:51:16] "[35m[1mPOST /submit-feedback/01625727/2 HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2450, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1867, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ubuntu/healthcare_server/flask/lib/python2.7/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/ubuntu/healthcare_server/app.py", line 103, in submit_feedback
+    row.feedback = value
+AttributeError: 'NoneType' object has no attribute 'feedback'
+[2020-06-16 18:15:42,791] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 18:15:43] "[37mPOST / HTTP/1.1[0m" 200 -
+80.110.66.13 - - [16/Jun/2020 18:19:05] "[37mOPTIONS /submit-feedback/11934923/5 HTTP/1.1[0m" 200 -
+80.110.66.13 - - [16/Jun/2020 18:19:06] "[37mPOST /submit-feedback/11934923/5 HTTP/1.1[0m" 200 -
+[2020-06-16 18:23:54,868] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 18:23:55] "[37mPOST / HTTP/1.1[0m" 200 -
+3.126.117.204 - - [16/Jun/2020 18:24:20] "[31m[1mPOST / HTTP/1.1[0m" 400 -
+[2020-06-16 18:24:40,781] ERROR in app: near "has_recommendation": syntax error
+3.126.117.204 - - [16/Jun/2020 18:24:41] "[37mPOST / HTTP/1.1[0m" 200 -
+80.109.82.229 - - [16/Jun/2020 18:26:18] "[37mOPTIONS /submit-feedback/1227248/5 HTTP/1.1[0m" 200 -
+80.109.82.229 - - [16/Jun/2020 18:26:18] "[37mPOST /submit-feedback/1227248/5 HTTP/1.1[0m" 200 -
+80.108.236.226 - - [16/Jun/2020 18:27:59] "[37mOPTIONS /submit-feedback/1028681/4 HTTP/1.1[0m" 200 -
+80.108.236.226 - - [16/Jun/2020 18:28:00] "[37mPOST /submit-feedback/1028681/4 HTTP/1.1[0m" 200 -
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 599, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib/python2.7/SocketServer.py", line 655, in __init__
+    self.handle()
+  File "/home/ubuntu/healthcare_server/flask/local/lib/python2.7/site-packages/werkzeug/serving.py", line 345, in handle
+    BaseHTTPRequestHandler.handle(self)
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/home/ubuntu/healthcare_server/flask/local/lib/python2.7/site-packages/werkzeug/serving.py", line 375, in handle_one_request
+    self.raw_requestline = self.rfile.readline()
+IOError: [Errno 104] Connection reset by peer
+141.98.10.138 - - [16/Jun/2020 18:32:57] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*\xe0\x00\x00\x00\x00\x00Cookie:')
+141.98.10.138 - - [16/Jun/2020 18:32:57] "[31m[1m  /*à     Cookie: mstshash=Administr[0m" 400 -
+141.98.10.138 - - [16/Jun/2020 18:32:57] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*\xe0\x00\x00\x00\x00\x00Cookie:')
+141.98.10.138 - - [16/Jun/2020 18:32:57] "[31m[1m  /*à     Cookie: mstshash=Administr[0m" 400 -
