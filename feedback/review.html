@@ -8,7 +8,7 @@
   		var student_id = gup('student_id', window.location.href)
   		var xhttp = new XMLHttpRequest()
 
-  		xhttp.open('PUT', 'http://3.126.117.204:5000/submit-feedback/' + student_id + '/' + value)
+  		xhttp.open('PUT', 'http://3.126.117.204:4000/submit-feedback/' + student_id + '/' + value)
   	  xhttp.setRequestHeader('Access-Control-Allow-Origin', '*')
   		xhttp.send()
   		window.location.replace("review-submitted.html")
