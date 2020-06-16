@@ -96,7 +96,7 @@ def get_pending_requests():
     return make_response(jsonify(list), 200)
 
 
-@app.route('/submit-feedback/<int:student_id>/<string:value>', methods=['POST'])
+@app.route('/submit-feedback/<string:student_id>/<string:value>', methods=['POST'])
 @cross_origin()
 def submit_feedback(student_id, value):
     row = db.session.query(PatientRequest).filter_by(student_id=student_id).first()
