@@ -153,9 +153,13 @@ def simulate_test(request_id):
     row.is_suspect = False
     row.is_closed = True
     id = row.id
+    student_id = row.student_id
     db.session.commit()
     if not simulated_val:
-        send_email("Lab test results are negative. You don't have corona virus!", row.patient_email)
+        send_email("""Lab test results are negative. You don't have corona virus! 
+                    Please leave feedback of the system at http://3.126.117.204:8080/review.html?student
+                   """,
+            row.patient_email)
     # simulate doctor report
     else:
         doctor_report(id, message="test")
