@@ -106,12 +106,11 @@ def submit_feedback(student_id, value):
     db.session.commit()
 
 
-@app.route('/send_contacts/<string:email>/<string:lastname>/<string:firstname>/<string:studentid>', methods=['PUT'])
+@app.route('/send-contacts/<string:email>/<string:lastname>/<string:firstname>/<string:studentid>', methods=['PUT'])
 @cross_origin()
 def send_contacts(email, lastname, firstname, studentid):
     send_email("You have been in contact with a positive corona person (" + studentid + ")",
                recipient=email)
-    db.session.commit()
 
 
 #TODO Zana Begoli part
