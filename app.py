@@ -112,6 +112,7 @@ def submit_feedback(student_id, value):
 def send_contacts(email, lastname, firstname, studentid):
     send_email("You have been in contact with a positive corona person (" + studentid + ")",
                recipient=email)
+    return make_response(jsonify({'success': 'Email sent to contact'}), 200)
 
 
 #TODO Zana Begoli part
