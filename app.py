@@ -101,7 +101,7 @@ def get_pending_requests():
 def submit_feedback(student_id, value):
     row = db.session.query(PatientRequest).filter_by(student_id=student_id).first()
     row.feedback = value
-    row.time_ended = datetime.datetime.utcnow
+    row.time_ended = datetime.datetime.now()
     send_email("Your feedback has been recorded. Thank you for using our system", recipient=row.patient_email)
     db.session.commit()
 
@@ -177,8 +177,10 @@ bool_cols = ['hasCough', 'hasFever', 'hasShortnessOfBreath', 'hasMusclePain', 'h
 def prescreening_request():
     if request.is_json:
         data = request.get_json()
+
+        # for flask mvc req
         data = json.loads(data)
-        print(data)
+
 
         if ('patient_email' not in data) or data['patient_email'] == '':
             return make_response(jsonify({'error': 'Field patient_email does not exist. Please fill out all required fields.'}), 400)
