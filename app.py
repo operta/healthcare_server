@@ -131,9 +131,9 @@ def doctor_report(request_id, message):
     file1.close()
     #send message to patient
     send_email(message, recipient=row.patient_email)
-    send_email("Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id" + student_id,
+    send_email("Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id=" + student_id,
                recipient=row.patient_email)
-    send_email("Please provide a list of your contacts in last 15 days to the government at http://3.126.117.204:8080/closeContactForm.html?student_id" + student_id,
+    send_email("Please provide a list of your contacts in last 15 days to the government at http://3.126.117.204:8080/closeContactForm.html?student_id=" + student_id,
                recipient=row.patient_email)
     return make_response(jsonify({'success': request_id}), 200)
 
@@ -163,7 +163,7 @@ def simulate_test(request_id):
     db.session.commit()
     if not simulated_val:
         send_email("Lab test results are negative. You don't have corona virus!"
-                   " Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id" + student_id,
+                   " Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id=" + student_id,
             patient_email)
     # simulate doctor report
     else:
@@ -250,7 +250,7 @@ def prescreening_request():
             return make_response(jsonify({'message': msg}), 200)
 
         msg = "Pre-screening results are negative. You are not a corona suspect! " \
-              "Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id" + patient_request.student_id
+              "Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id=" + patient_request.student_id
         send_email(msg, patient_request.patient_email)
 
         patient_request.is_closed = True
