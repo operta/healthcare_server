@@ -1,0 +1,70 @@
+<html>
+<head>
+	<!--
+	<script>
+	let counter = 1;
+	let limit = 5;
+	function addInput(divName){
+	     if (counter == limit)  {
+	          alert("You have reached the limit of adding " + counter + " contacts");
+	     }
+	     else {
+	          let newdiv = document.createElement('div');
+	          newdiv.innerHTML = "Contact " + (counter + 1) + ' <br><input type="text"  placeholder="e-mail" name="myContacts[]">';
+	          document.getElementById(divName).appendChild(newdiv);
+
+	          counter++;
+	     }
+	}
+	</script>
+
+	-->
+	<script>
+
+	function sendParams() {
+		var name = document.getElementById("name").value;
+		var lastname = document.getElementById("lastname").value;
+		var varemail = document.getElementById("email").value;
+
+
+		var student_id = gup('student_id', window.location.href)
+		var xhttp = new XMLHttpRequest()
+
+		xhttp.open('PUT', 'http://3.126.117.204:4000/send-contacts/' + varemail + '/' + lastname + '/' + name + '/' + student_id)
+	  xhttp.setRequestHeader('Access-Control-Allow-Origin', '*')
+		xhttp.send()
+		window.location.reload()
+	}
+
+
+		function gup( name, url ) {
+	    if (!url) url = location.href;
+	    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	    var regexS = "[\\?&]"+name+"=([^&#]*)";
+	    var regex = new RegExp( regexS );
+	    var results = regex.exec( url );
+	    return results == null ? null : results[1];
+	}
+
+	</script>
+
+</head>
+
+
+<body>
+<form method="POST">
+	<div id=student_id>
+     <div id="dynamicInput"><br>
+          Name<input type="text" name="myContacts[]" placeholder="Name" id="name" required>
+					Lastname<input type="text" name="myContacts[]" placeholder="Lastname" id="lastname" required>
+					Email<input type="text" name="myContacts[]" placeholder="Email" id="email" required>
+     </div>
+    <!--  <input type="button" value="Add Another Contact" onClick="addInput('dynamicInput');"> -->
+		<a href="closeContactForm_submitted.html"><input type="button" value="I am done"></a>
+		<input type="button" value="Submit" type="submit" onclick="sendParams()">
+	 <!-- <a href="closeContactForm.html"></a> -->
+</form>
+</body>
+
+
+</html>
