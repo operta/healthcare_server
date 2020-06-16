@@ -104,6 +104,7 @@ def submit_feedback(student_id, value):
     row.time_ended = datetime.datetime.now()
     send_email("Your feedback has been recorded. Thank you for using our system", recipient=row.patient_email)
     db.session.commit()
+    return make_response(jsonify({'success': 'Feedback recorded'}), 200)
 
 
 @app.route('/send-contacts/<string:email>/<string:lastname>/<string:firstname>/<string:studentid>', methods=['PUT'])
