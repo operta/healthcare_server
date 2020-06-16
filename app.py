@@ -109,8 +109,8 @@ def submit_feedback(student_id, value):
 @app.route('/send_contacts/<string:email>/<string:lastname>/<string:firstname>/<string:studentid>', methods=['PUT'])
 @cross_origin()
 def send_contacts(email, lastname, firstname, studentid):
-    # TODO write nice email
-    send_email("You have beeing in contact with a positive corona person", recipient=email)
+    send_email("You have been in contact with a positive corona person (" + studentid + ")",
+               recipient=email)
     db.session.commit()
 
 
@@ -122,6 +122,7 @@ def doctor_report(request_id, message):
     row = db.session.query(PatientRequest).filter_by(id=request_id).first()
     row.doctor_comment = message
     row.has_recommendation = True
+    student_id = row.student_id
     db.session.commit()
 
     # get written doctor_report
@@ -130,6 +131,10 @@ def doctor_report(request_id, message):
     file1.close()
     #send message to patient
     send_email(message, recipient=row.patient_email)
+    send_email("Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id" + student_id,
+               recipient=row.patient_email)
+    send_email("Please provide a list of your contacts in last 15 days to the government at http://3.126.117.204:8080/closeContactForm.html?student_id" + student_id,
+               recipient=row.patient_email)
     return make_response(jsonify({'success': request_id}), 200)
 
 
@@ -154,12 +159,12 @@ def simulate_test(request_id):
     row.is_closed = True
     id = row.id
     student_id = row.student_id
+    patient_email = row.patient_email
     db.session.commit()
     if not simulated_val:
-        send_email("""Lab test results are negative. You don't have corona virus! 
-                    Please leave feedback of the system at http://3.126.117.204:8080/review.html?student
-                   """,
-            row.patient_email)
+        send_email("Lab test results are negative. You don't have corona virus!"
+                   " Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id" + student_id,
+            patient_email)
     # simulate doctor report
     else:
         doctor_report(id, message="test")
@@ -239,12 +244,15 @@ def prescreening_request():
             db.session.flush()
             db.session.refresh(patient_request)
             id = patient_request.id
+
             # simulating decision and sending medical team
             simulate_test(id)
             return make_response(jsonify({'message': msg}), 200)
 
-        msg = "Pre-screening results are negative. You are not a corona suspect!"
+        msg = "Pre-screening results are negative. You are not a corona suspect! " \
+              "Please leave feedback of the system at http://3.126.117.204:8080/review.html?student_id" + patient_request.student_id
         send_email(msg, patient_request.patient_email)
+
         patient_request.is_closed = True
         db.session.add(patient_request)
 
