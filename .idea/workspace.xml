@@ -8,7 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ece77a5d-d362-49d4-8276-c6046b18dc32.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ece77a5d-d362-49d4-8276-c6046b18dc32.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/healthcare.db" beforeDir="false" afterPath="$PROJECT_DIR$/healthcare.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/closeContactForm.html" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/closeContactForm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/review.html" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/review.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +19,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/healthcare$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1589546479915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/healthcare$Flask__app_py___1_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1592308945853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/healthcare$Flask__app_py___1_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1592309772001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -98,17 +99,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="5" />
-          <entry key="py" value="8984" />
+          <entry key="html" value="66" />
+          <entry key="py" value="8992" />
           <entry key="sql" value="53" />
           <entry key="txt" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="5" />
+          <entry key="HTML" value="66" />
           <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="8974" />
+          <entry key="Python" value="8982" />
           <entry key="SQL" value="10" />
           <entry key="Scratch" value="53" />
         </counts>
@@ -117,21 +118,23 @@
         <counts>
           <entry key="csv" value="1" />
           <entry key="html" value="8" />
-          <entry key="patient_request" value="8" />
+          <entry key="patient_request" value="9" />
           <entry key="py" value="17" />
           <entry key="sql" value="2" />
           <entry key="sqlite_master" value="2" />
+          <entry key="ts" value="1" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSV" value="1" />
-          <entry key="Database Element" value="10" />
+          <entry key="Database Element" value="11" />
           <entry key="HTML" value="8" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Python" value="17" />
           <entry key="Scratch" value="2" />
+          <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -141,8 +144,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            <state relative-caret-position="316">
+              <caret line="104" column="75" selection-start-line="104" selection-start-column="75" selection-end-line="104" selection-end-column="75" />
               <folding>
                 <element signature="e#15#71#0" expanded="true" />
               </folding>
@@ -180,8 +183,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feedback/closeContactForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+            <state relative-caret-position="240">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -204,7 +207,16 @@
         <entry file="file://$PROJECT_DIR$/feedback/review.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="845">
+              <caret line="16425" column="4" selection-start-line="16425" selection-start-column="4" selection-end-line="16425" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -214,15 +226,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/Cellar/python@2/2.7.17/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10815">
-              <caret line="725" column="42" selection-start-line="725" selection-start-column="42" selection-end-line="725" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -255,10 +258,10 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/83124d72-15fe-4815-b847-5b31258c49bf/console.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/29926ba3-eeee-4543-8550-8a46ae87b8c5/console.sql" />
         <option value="$PROJECT_DIR$/PatientRequest.py" />
-        <option value="$PROJECT_DIR$/feedback/closeContactForm.html" />
-        <option value="$PROJECT_DIR$/feedback/review.html" />
         <option value="$PROJECT_DIR$/feedback/review-submitted.html" />
         <option value="$PROJECT_DIR$/doctor_message.txt" />
+        <option value="$PROJECT_DIR$/feedback/review.html" />
+        <option value="$PROJECT_DIR$/feedback/closeContactForm.html" />
         <option value="$PROJECT_DIR$/app.py" />
       </list>
     </option>
@@ -445,12 +448,12 @@
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30990416" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30990416" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871288" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7287736" visible="true" weight="0.24554455" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7287736" visible="true" weight="0.24554455" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -466,8 +469,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32904884" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.14217253" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.328541" />
+      <window_info anchor="right" id="Database" order="4" weight="0.14217253" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,13 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feedback/review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/doctor_message.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -558,27 +554,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feedback/closeContactForm_submitted.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feedback/closeContactForm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/feedback/review-submitted.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="1951" selection-start-line="1951" selection-end-line="1951" />
         </state>
       </provider>
     </entry>
@@ -596,10 +575,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/feedback/closeContactForm_submitted.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="845">
+          <caret line="16425" column="4" selection-start-line="16425" selection-start-column="4" selection-end-line="16425" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feedback/review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feedback/closeContactForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="1951" selection-start-line="1951" selection-end-line="1951" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="316">
+          <caret line="104" column="75" selection-start-line="104" selection-start-column="75" selection-end-line="104" selection-end-column="75" />
           <folding>
             <element signature="e#15#71#0" expanded="true" />
           </folding>

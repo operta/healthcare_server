@@ -96,7 +96,7 @@ def get_pending_requests():
     return make_response(jsonify(list), 200)
 
 
-@app.route('/submit-feedback/<int:student_id>/<string:value>', methods=['PUT'])
+@app.route('/submit-feedback/<int:student_id>/<string:value>', methods=['POST'])
 @cross_origin()
 def submit_feedback(student_id, value):
     row = db.session.query(PatientRequest).filter_by(student_id=student_id).first()
@@ -107,7 +107,7 @@ def submit_feedback(student_id, value):
     return make_response(jsonify({'success': 'Feedback recorded'}), 200)
 
 
-@app.route('/send-contacts/<string:email>/<string:lastname>/<string:firstname>/<string:studentid>', methods=['PUT'])
+@app.route('/send-contacts/<string:email>/<string:lastname>/<string:firstname>/<string:studentid>', methods=['POST'])
 @cross_origin()
 def send_contacts(email, lastname, firstname, studentid):
     send_email("You have been in contact with a positive corona person (" + studentid + ")",
