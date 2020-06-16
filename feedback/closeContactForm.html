@@ -30,7 +30,7 @@
 		var student_id = gup('student_id', window.location.href)
 		var xhttp = new XMLHttpRequest()
 
-		xhttp.open('PUT', 'http://3.126.117.204:4000/send-contacts/' + varemail + '/' + lastname + '/' + name + '/' + student_id)
+		xhttp.open('PUT', 'http://3.126.117.204:5000/send-contacts/' + varemail + '/' + lastname + '/' + name + '/' + student_id)
 	  xhttp.setRequestHeader('Access-Control-Allow-Origin', '*')
 		xhttp.send()
 		window.location.reload()
